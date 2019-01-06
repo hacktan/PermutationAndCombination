@@ -1,12 +1,29 @@
 // PermutationAndCombination.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-
+/* Calculate Permutation and Combination (nCr and nPr)
+   Using Function */
 #include "pch.h"
 #include <iostream>
-
-int main()
+#include<stdio.h>
+#include<conio.h>
+void main()
 {
-    std::cout << "Hello World!\n"; 
+	int n, c, r, ncr, npr;
+	long int fact(int);  /* function Prototype */
+	printf("Enter the Value of n and r, n must be n>r :\n");
+	scanf_s("%d%d", &n, &r);
+	ncr = fact(n) / fact(n - r);
+	npr = fact(n) / (n*fact(n - r));
+	printf("NCR = %d\n", ncr);
+	printf("NPR = %d\n", npr);
+}
+long int fact(int x)
+{
+	long int f = 1;
+	int i;
+	for (i = 1; i <= x; i++)
+		f = f * i;
+	return(f);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
